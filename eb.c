@@ -27,15 +27,15 @@ extern int main(void)
    while(1)   /* Loop Forever */
    {
 
-   printf("\nEnter the EBCDIC values\n");
+   printf("\nEnter the EBCDIC values (. to exit)\n");
 
-   gets(buffer);
+   scanf("%s",buffer);
 
    bufPtr = buffer;
 
-   if ( (*bufPtr == '.') || (*bufPtr == '\0') ) return 0;
+   if (strncmp(bufPtr, ".", sizeof(char *)) == 0 )  return 0;
 
-   while(*bufPtr !='\0')
+   while(*bufPtr)
    {
 
       out='.';
